@@ -1,5 +1,6 @@
 {
     "require": {
-        "aura/router": "^3.0"
+        "aura/router": "^3.0",
+        "zendframework/zend-diactoros": "^1.3"
     }
 }
