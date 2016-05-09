@@ -35,3 +35,9 @@ foreach ($route->attributes as $key => $val) {
 }
 
 #var_dump($request);
+
+$callable = $route->handler;
+$response = $callable($request);
+
+?>
+
