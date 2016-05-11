@@ -12,7 +12,7 @@ $map = $routerContainer->getMap();
 
 $map->get('blog.read', '/blog/{id}', function ($request, $response) {
     $id = (int) $request->getAttribute('id');
-    $response->body()->write("You asked for blog entry {$id}.");
+    $response->getBody()->write("You asked for blog entry {$id}.");
     return $response;
 });
 
@@ -24,7 +24,7 @@ $route = $matcher->match($request);
 
 if( false === $route ){ echo "route not found for current url"; }
 
-var_dump($route);
+// var_dump($route);
 
 #var_dump($route->attributes);
 
@@ -39,5 +39,6 @@ foreach ($route->attributes as $key => $val) {
 $callable = $route->handler;
 $response = $callable($request, new \Zend\Diactoros\Response);
 
+echo $response->getBody();
 ?>
 
